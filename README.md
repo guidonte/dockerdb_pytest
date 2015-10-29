@@ -16,19 +16,19 @@ They require a local Docker installation with user permissions properly set.
 
 Example usage:
 
-class TestClass(object):
-    # sql files to be found in the 'data' directory
-    DATA = [
-        'create_tables.sql',
-        'required_data.sql',
-    ]
+    class TestClass(object):
+        # sql files to be found in the 'data' directory
+        DATA = [
+            'create_tables.sql',
+            'required_data.sql',
+        ]
 
-    # list of SQL statements to load
-    SQL = [
-        ("INSERT into items (id, name) VALUES (1, 'foo')"),
-        ("INSERT into items (id, name) VALUES (2, 'bar')"),
-    ]
+        # list of SQL statements to load
+        SQL = [
+            ("INSERT into items (id, name) VALUES (1, 'foo')"),
+            ("INSERT into items (id, name) VALUES (2, 'bar')"),
+        ]
 
-    def text_update(self, dockerdb):
-        cursor = dockerdb.cursor()
-        update_items(cursor, [])
+        def text_update(self, dockerdb):
+            cursor = dockerdb.cursor()
+            update_items(cursor, [])
